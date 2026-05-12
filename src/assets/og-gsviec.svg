@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#07111f"/>
-  <circle cx="950" cy="110" r="180" fill="#31d0aa" opacity=".12"/>
-  <circle cx="160" cy="540" r="220" fill="#5fa8ff" opacity=".10"/>
-  <text x="80" y="170" fill="#31d0aa" font-family="Arial, sans-serif" font-size="34" font-weight="700">GSVIEC</text>
-  <text x="80" y="280" fill="#f7fbff" font-family="Arial, sans-serif" font-size="72" font-weight="700">Comprehensive</text>
-  <text x="80" y="365" fill="#f7fbff" font-family="Arial, sans-serif" font-size="72" font-weight="700">Infrastructure Solutions</text>
-  <text x="80" y="450" fill="#9fb0c7" font-family="Arial, sans-serif" font-size="30">DevOps / Bare Metal / Cloud / Blockchain</text>
+  <rect width="1200" height="630" fill="#0B192C"/>
+  <circle cx="960" cy="120" r="190" fill="#00D1FF" opacity=".14"/>
+  <circle cx="170" cy="545" r="230" fill="#00FFC2" opacity=".10"/>
+  <text x="80" y="150" fill="#00D1FF" font-family="Arial, sans-serif" font-size="34" font-weight="700">GSVIEC</text>
+  <text x="80" y="260" fill="#f7fbff" font-family="Arial, sans-serif" font-size="70" font-weight="700">Bare-metal Automation</text>
+  <text x="80" y="345" fill="#f7fbff" font-family="Arial, sans-serif" font-size="70" font-weight="700">&amp; Web3 Node Infrastructure</text>
+  <text x="80" y="430" fill="#a9bad0" font-family="Arial, sans-serif" font-size="30">Global Solutions for Virtualized Infrastructure &amp; Enterprise Computing</text>
 </svg>

@@ -42,7 +42,7 @@ content:
         label: Category
         type: select
         options:
-          values: [DevOps, Bare Metal, Cloud, Blockchain, Security]
+          values: [Bare Metal, Validator, DePIN, Web3, Cloud, Blockchain, DevOps, Security]
         required: true
       - name: tags
         label: Tags

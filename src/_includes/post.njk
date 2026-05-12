@@ -9,7 +9,7 @@ ogType: article
     <p>{{ summary }}</p>
     <div class="article-meta">
       <span>{{ date | readableDate }}</span>
-      <span>Updated {{ updated or date | readableDate }}</span>
+      <span>Updated {{ (updated or date) | readableDate }}</span>
       <span>{{ author }}</span>
     </div>
   </div>
@@ -23,9 +23,9 @@ ogType: article
     "headline": "{{ title }}",
     "description": "{{ description }}",
     "author": { "@type": "Organization", "name": "{{ author }}" },
-    "publisher": { "@type": "Organization", "name": "GSVIEC", "logo": { "@type": "ImageObject", "url": "{{ site.domain }}/assets/logo.svg" } },
+    "publisher": { "@type": "Organization", "name": "GSVIEC", "logo": { "@type": "ImageObject", "url": "{{ site.domain }}/assets/logo-gsviec.png" } },
     "datePublished": "{{ date | isoDate }}",
-    "dateModified": "{{ updated or date | isoDate }}",
+    "dateModified": "{{ (updated or date) | isoDate }}",
     "mainEntityOfPage": "{{ site.domain }}{{ page.url }}"
   }
   </script>

@@ -3,13 +3,13 @@
   "short_name": "GSVIEC",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#07111f",
-  "theme_color": "#07111f",
+  "background_color": "#0B192C",
+  "theme_color": "#0B192C",
   "icons": [
     {
-      "src": "/assets/favicon.svg",
-      "sizes": "64x64",
-      "type": "image/svg+xml"
+      "src": "/assets/favicon-gsviec.png",
+      "sizes": "256x256",
+      "type": "image/png"
     }
   ]
 }

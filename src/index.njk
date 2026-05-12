@@ -1,59 +1,76 @@
 ---
 layout: base.njk
-title: "GSVIEC - DevOps, Bare Metal, Cloud & Blockchain Infrastructure"
-description: "GSVIEC builds private cloud platforms, optimizes hardware, and deploys high-security blockchain infrastructure for enterprise teams."
-schema: '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"GSVIEC","url":"https://gsviec.com","logo":"https://gsviec.com/assets/logo.svg","address":{"@type":"PostalAddress","addressLocality":"Thu Duc City","addressRegion":"Ho Chi Minh City","addressCountry":"VN"}},{"@type":"WebSite","name":"GSVIEC","url":"https://gsviec.com"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does GSVIEC specialize in?","acceptedAnswer":{"@type":"Answer","text":"GSVIEC specializes in DevOps consulting, bare metal automation, cloud and hybrid cloud platforms, and enterprise blockchain infrastructure."}},{"@type":"Question","name":"Can GSVIEC support private infrastructure?","acceptedAnswer":{"@type":"Answer","text":"Yes. GSVIEC designs and operates private cloud, bare metal, Kubernetes, OpenStack, and blockchain infrastructure for enterprise requirements."}}]}]}'
+title: "GSVIEC - Bare-metal Automation & Web3 Node Infrastructure"
+description: "Bare-metal automation and Web3 node infrastructure for validators, DePIN projects, and enterprise blockchain teams that need control, performance, and uptime."
+schema: '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"GSVIEC","alternateName":"Global Solutions for Virtualized Infrastructure & Enterprise Computing","url":"https://gsviec.com","logo":"https://gsviec.com/assets/logo-gsviec.png","address":{"@type":"PostalAddress","addressLocality":"Thu Duc City","addressRegion":"Ho Chi Minh City","addressCountry":"VN"}},{"@type":"WebSite","name":"GSVIEC","url":"https://gsviec.com"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does GSVIEC provide?","acceptedAnswer":{"@type":"Answer","text":"GSVIEC provides bare-metal automation and Web3 node infrastructure for validators, DePIN projects, and enterprise blockchain teams."}},{"@type":"Question","name":"Does GSVIEC offer a free infrastructure trial?","acceptedAnswer":{"@type":"Answer","text":"No. GSVIEC avoids free infrastructure trials to reduce abuse risk. The Starter option is open-source automation guidance, while hosted plans are paid with a 14-day refund policy when applicable."}},{"@type":"Question","name":"What is the main value of bare-metal node hosting?","acceptedAnswer":{"@type":"Answer","text":"Bare-metal node hosting can reduce dependency on generic cloud platforms and improve control, latency, performance, and infrastructure cost predictability."}}]}]}'
 ---
 <section class="hero">
   <div class="hero-copy">
-    <p class="eyebrow">Comprehensive Infrastructure Solutions</p>
-    <h1>DevOps, Bare Metal, Cloud and Blockchain infrastructure for enterprise teams.</h1>
-    <p class="hero-lede">GSVIEC builds private cloud platforms, optimizes hardware, and deploys high-security blockchain infrastructure where performance, reliability, and operational control matter.</p>
+    <p class="eyebrow">{{ site.brandBackronym }}</p>
+    <h1>Bare-metal automation for Web3 nodes that cannot afford downtime.</h1>
+    <p class="hero-lede">GSVIEC helps validators, DePIN projects, and enterprise blockchain teams deploy node infrastructure with dedicated hardware control, repeatable automation, monitoring, and SLA-led operations.</p>
     <div class="hero-actions">
-      <a class="button primary" href="#consultation">Book consultation</a>
-      <a class="button secondary" href="#services">Explore services</a>
+      <a class="button primary" href="#consultation">Book a node audit</a>
+      <a class="button secondary" href="#plans">View plans</a>
     </div>
-    <div class="trust-strip" aria-label="GSVIEC capabilities">
-      <span>Kubernetes</span>
-      <span>OpenStack</span>
-      <span>Terraform</span>
-      <span>Hyperledger</span>
+    <div class="trust-strip" aria-label="GSVIEC positioning">
+      <span>Engineer-to-Engineer</span>
+      <span>IaC-first</span>
+      <span>No free infra abuse</span>
+      <span>Designed for sovereignty</span>
     </div>
   </div>
-  <div class="terminal-card" aria-label="Terraform bare metal provisioning demo">
+  <div class="terminal-card" aria-label="GSVIEC node deployment demo">
     <div class="terminal-bar">
       <span></span><span></span><span></span>
-      <strong>infra/gsviec-prod</strong>
+      <strong>gsviec/node-automator</strong>
     </div>
-    <pre><code data-typewriter>terraform plan -var env=enterprise
-resource "baremetal_node" "worker" {
-  hostname        = "prod-worker-01"
-  os_image        = "ubuntu_22_04"
-  pxe_boot        = true
-  bios_profile    = "performance"
-  vlan_profile    = "secure-prod"
-  user_data       = file("cloud-init.yaml")
-}
-Plan: 24 to add, 0 to change, 0 to destroy.</code></pre>
+    <pre><code data-typewriter>gsviec deploy node \
+  --network solana \
+  --profile bare-metal-ha \
+  --region eu-central \
+  --sla 99.9
+
+PXE boot .............. ready
+Firmware policy ....... locked
+Docker runtime ........ active
+Prometheus alerts ..... synced
+Failover route ........ standby
+
+Node status: HEALTHY</code></pre>
     <div class="terminal-status">
       <span class="pulse"></span>
-      Provisioning pipeline ready
+      Automation pipeline ready for paid onboarding
     </div>
   </div>
 </section>
 
-<section class="metrics" aria-label="Operational metrics">
-  <div><strong data-count="99.99">99.99%</strong><span>Designed uptime</span></div>
-  <div><strong data-count="50">50+</strong><span>Enterprise clients</span></div>
-  <div><strong data-count="10000">10k+</strong><span>Nodes managed</span></div>
-  <div><strong>24/7</strong><span>Expert support</span></div>
+<section class="metrics" aria-label="Strategic metrics">
+  <div><strong>50-85%</strong><span>Target infra cost reduction vs generic cloud, subject to workload</span></div>
+  <div><strong>30-50%</strong><span>Benchmark target for throughput uplift in suitable bare-metal cases</span></div>
+  <div><strong>99.9%</strong><span>Pro SLA target after paid deployment</span></div>
+  <div><strong>99.99%</strong><span>Enterprise SLA target with redundancy design</span></div>
+</section>
+
+<section id="problem" class="section problem-section">
+  <div class="section-heading">
+    <p class="eyebrow">Market Problem</p>
+    <h2>Web3 infrastructure is too expensive, too abstracted, and too risky when uptime drives revenue.</h2>
+    <p>Validators and node operators do not only buy servers. They buy continuity, block participation, latency, and confidence that operations will not fail at the worst moment.</p>
+  </div>
+  <div class="pillar-grid">
+    <div><strong>Cloud cost pressure</strong><p>Generic cloud is convenient, but high-volume node workloads can become structurally expensive as request, storage, and bandwidth usage grows.</p></div>
+    <div><strong>Slashing exposure</strong><p>Validator downtime can create protocol penalties. GSVIEC positions infrastructure around uptime visibility, failover thinking, and clear SLA boundaries.</p></div>
+    <div><strong>Limited control</strong><p>RPC and managed cloud services are fast to start, but teams lose hardware control, tuning depth, and direct ownership of critical operations.</p></div>
+    <div><strong>Manual DevOps burden</strong><p>Dedicated servers are cheaper but difficult to operate without automation, monitoring, security policy, and engineer-level support.</p></div>
+  </div>
 </section>
 
 <section id="services" class="section">
   <div class="section-heading">
-    <p class="eyebrow">Core Services</p>
-    <h2>Infrastructure work that moves from strategy to production.</h2>
-    <p>GSVIEC helps enterprise teams design, automate, secure, and operate the foundation behind critical digital products.</p>
+    <p class="eyebrow">Core Infrastructure</p>
+    <h2>A focused stack for node operators, DePIN teams, and enterprise blockchain builders.</h2>
+    <p>The public offer is narrow by design: bare-metal automation, validator operations, private Web3 cloud, and DevOps automation.</p>
   </div>
   <div class="service-grid">
     {% for item in services %}
@@ -67,60 +84,125 @@ Plan: 24 to add, 0 to change, 0 to destroy.</code></pre>
   </div>
 </section>
 
-<section id="platform" class="section split-section">
+<section id="plans" class="section plans-section">
+  <div class="section-heading">
+    <p class="eyebrow">Commercial Model</p>
+    <h2>Three offers that turn technical interest into paid infrastructure.</h2>
+    <p>Pricing below is indicative and should be confirmed after node requirements, chain, region, redundancy, bandwidth, and support level are scoped.</p>
+  </div>
+  <div class="pricing-grid">
+    <article class="pricing-card">
+      <span>Starter</span>
+      <h3>Open-source automation</h3>
+      <strong>Free</strong>
+      <p>Scripts and documentation for technical teams that want to run a node on their own server.</p>
+      <ul>
+        <li>Ansible/Terraform starter repo</li>
+        <li>Local or customer-owned server</li>
+        <li>Community-driven lead capture</li>
+      </ul>
+      <a class="button secondary" href="#consultation">Request repo access</a>
+    </article>
+    <article class="pricing-card featured">
+      <span>Pro</span>
+      <h3>Managed single node</h3>
+      <strong>$100-200/node/mo</strong>
+      <p>Paid node deployment with monitoring, basic support, and a target SLA for early operators.</p>
+      <ul>
+        <li>Automated bare-metal deployment</li>
+        <li>Monitoring and uptime reports</li>
+        <li>14-day refund policy after upfront payment</li>
+      </ul>
+      <a class="button primary" href="#consultation">Start Pro scope</a>
+    </article>
+    <article class="pricing-card">
+      <span>Enterprise</span>
+      <h3>Multi-node failover</h3>
+      <strong>$500+/mo</strong>
+      <p>Custom topology for validators, DePIN projects, and enterprise blockchain systems.</p>
+      <ul>
+        <li>Multi-node redundancy</li>
+        <li>Auto-failover beta path</li>
+        <li>24/7 technical support and SLA 99.99% target</li>
+      </ul>
+      <a class="button secondary" href="#consultation">Book enterprise demo</a>
+    </article>
+  </div>
+</section>
+
+<section id="architecture" class="section split-section">
   <div>
-    <p class="eyebrow">Bare Metal Power</p>
-    <h2>Bring physical infrastructure under software control.</h2>
-    <p>Automated PXE boot, firmware lifecycle, MaaS integration, network optimization, and real-time monitoring turn hardware fleets into programmable infrastructure.</p>
+    <p class="eyebrow">Infrastructure Architecture</p>
+    <h2>From physical servers to repeatable Web3 operations.</h2>
+    <p>GSVIEC's strategic advantage is the bridge between bare-metal control and software-defined operations. The system should make a dedicated server behave like a disciplined infrastructure product.</p>
     <ul class="check-list">
-      <li>Automated OS provisioning and cloud-init workflows</li>
-      <li>Firmware and BIOS management through repeatable policy</li>
-      <li>VLAN, bonding, and hardware-level performance tuning</li>
-      <li>Terraform-led Infrastructure as Code standards</li>
+      <li>PXE boot and automated OS provisioning for fast node setup</li>
+      <li>BIOS, firmware, VLAN, and bonding policy for performance control</li>
+      <li>Terraform and Ansible scripts for repeatable deployments</li>
+      <li>Monitoring, alerts, backup, and failover readiness for uptime</li>
+      <li>KYC-light and paid onboarding to reduce abuse risk</li>
     </ul>
   </div>
   <div class="architecture-panel">
-    <div>GitOps</div>
+    <div>Customer KYC</div>
+    <div>Paid Scope</div>
     <div>Terraform</div>
+    <div>Ansible</div>
     <div>PXE Boot</div>
-    <div>MaaS</div>
-    <div>Monitoring</div>
-    <div>Private Cloud</div>
+    <div>Node Runtime</div>
+    <div>Prometheus</div>
+    <div>Failover</div>
   </div>
 </section>
 
-<section id="blockchain" class="section blockchain-section">
+<section class="section blockchain-section">
   <div class="blockchain-copy">
-    <p class="eyebrow">Enterprise Blockchain</p>
-    <h2>Validator and private chain infrastructure designed for real operations.</h2>
-    <p>From validator node deployment to permissioned chain architecture and smart contract security, GSVIEC focuses on resilient infrastructure, data integrity, and measurable operational control.</p>
+    <p class="eyebrow">Proof of Technical Direction</p>
+    <h2>Open-source scripts create trust; managed operations create revenue.</h2>
+    <p>The Starter repo attracts technical operators. Pro and Enterprise convert teams that need SLA, support, failover, and someone accountable for production readiness.</p>
   </div>
-  <div class="block-card" aria-label="Blockchain block status">
-    <span>Block #192834</span>
-    <strong>Validated</strong>
-    <code>Hash: 0x8a72...3f9</code>
-    <code>Prev: 0x1c44...9a2</code>
-    <small>Txns: 1,402 / Size: 42 kB</small>
+  <div class="block-card" aria-label="Validator node status">
+    <span>Validator Node</span>
+    <strong>Healthy</strong>
+    <code>slot_lag: 0</code>
+    <code>latency: monitored</code>
+    <small>Uptime, alerting, and failover reports available after deployment</small>
   </div>
 </section>
 
-<section class="section why-section">
+<section id="comparison" class="section comparison-section">
   <div class="section-heading">
-    <p class="eyebrow">Why GSVIEC</p>
-    <h2>Built for teams that need the infrastructure to hold.</h2>
+    <p class="eyebrow">Competitive Position</p>
+    <h2>Between DIY dedicated servers and expensive enterprise node services.</h2>
+    <p>GSVIEC should compete on control, support, and price-performance: more accountable than pure DIY, more flexible than RPC-only providers, and more accessible than high-end enterprise vendors.</p>
+  </div>
+  <div class="comparison-table" role="table" aria-label="Competitive comparison">
+    <div role="row" class="table-head"><span>Option</span><span>Strength</span><span>Tradeoff</span><span>GSVIEC angle</span></div>
+    <div role="row"><span>Infura / Alchemy</span><span>Fast API access</span><span>No hardware control; volume-based cost</span><span>Better for teams needing owned node operations</span></div>
+    <div role="row"><span>Chainstack</span><span>Managed multi-chain access</span><span>Request-based scaling economics</span><span>More control for performance-sensitive workloads</span></div>
+    <div role="row"><span>Akash</span><span>Decentralized cloud economics</span><span>Token and stability uncertainty</span><span>SLA-led operating model with technical support</span></div>
+    <div role="row"><span>Hetzner / OVH DIY</span><span>Low server cost</span><span>Customer handles all DevOps risk</span><span>Automation, monitoring, and Web3-specific operations</span></div>
+    <div role="row"><span>Blockdaemon</span><span>Enterprise node service</span><span>Premium pricing</span><span>Focused middle position for startups and growing infra teams</span></div>
+  </div>
+</section>
+
+<section class="section trust-section">
+  <div class="section-heading">
+    <p class="eyebrow">Technical Trust Signals</p>
+    <h2>What GSVIEC must prove publicly.</h2>
   </div>
   <div class="pillar-grid">
-    <div><strong>Performance</strong><p>Bare metal optimization and hardware-aware architecture reduce unnecessary overhead.</p></div>
-    <div><strong>Reliability</strong><p>Monitoring, operational runbooks, and 24/7 support keep systems observable and accountable.</p></div>
-    <div><strong>Security</strong><p>Private cloud and blockchain infrastructure are designed around control, isolation, and auditability.</p></div>
-    <div><strong>Automation</strong><p>Infrastructure as Code, CI/CD, and repeatable provisioning turn operations into a dependable system.</p></div>
+    <div><strong>Open-source starter</strong><p>Publish deployment scripts and documentation so technical buyers can inspect the operating model before buying managed service.</p></div>
+    <div><strong>Benchmark reports</strong><p>Show workload-specific comparisons for latency, throughput, sync time, and monthly infrastructure cost.</p></div>
+    <div><strong>Uptime dashboard</strong><p>Make demo node health visible with uptime, incident notes, and recovery behavior.</p></div>
+    <div><strong>SLA clarity</strong><p>State refund, uptime, and slashing-liability boundaries clearly before onboarding paid nodes.</p></div>
   </div>
 </section>
 
 <section class="section insights-preview">
   <div class="section-heading">
     <p class="eyebrow">Latest Insights</p>
-    <h2>Technical thinking for enterprise infrastructure leaders.</h2>
+    <h2>Engineer-to-engineer content for validators and infrastructure teams.</h2>
   </div>
   <div class="post-grid">
     {% for post in collections.posts %}
@@ -138,16 +220,16 @@ Plan: 24 to add, 0 to change, 0 to destroy.</code></pre>
 
 <section id="consultation" class="consultation">
   <div>
-    <p class="eyebrow">Book consultation</p>
-    <h2>Discuss your infrastructure roadmap with GSVIEC.</h2>
-    <p>Share your cloud, DevOps, bare metal, or blockchain challenge. The first response should clarify scope, priorities, and the next technical decision.</p>
+    <p class="eyebrow">Book a Node Audit</p>
+    <h2>Find out whether your node workload should move to bare metal.</h2>
+    <p>Send your chain, region, uptime target, current monthly cost, and whether you need single-node Pro or Enterprise failover. GSVIEC will respond with the next technical step.</p>
   </div>
   <form class="contact-form" action="{{ site.formEndpoint }}" method="POST" data-contact-form>
     <label>Full name<input name="name" autocomplete="name" required></label>
     <label>Work email<input type="email" name="email" autocomplete="email" required></label>
-    <label>Company<input name="company" autocomplete="organization"></label>
-    <label>What do you need?<textarea name="message" rows="5" required></textarea></label>
-    <button class="button primary" type="submit">Request consultation</button>
+    <label>Project / company<input name="company" autocomplete="organization"></label>
+    <label>Node or infrastructure need<textarea name="message" rows="5" placeholder="Network, current provider, monthly cost, uptime target, region, and expected node count" required></textarea></label>
+    <button class="button primary" type="submit">Request infrastructure audit</button>
     <p class="form-note">Replace the Formspree endpoint in <code>src/_data/site.json</code> before production.</p>
   </form>
 </section>

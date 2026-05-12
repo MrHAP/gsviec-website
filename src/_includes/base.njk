@@ -15,8 +15,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title or site.defaultTitle }}">
     <meta name="twitter:description" content="{{ description or site.defaultDescription }}">
-    <meta name="theme-color" content="#07111f">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0B192C">
+    <link rel="icon" href="/assets/favicon-gsviec.png" type="image/png">
     <link rel="manifest" href="/assets/site.webmanifest">
     <link rel="stylesheet" href="/assets/css/style.css">
     {% if schema %}
@@ -27,17 +27,19 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
       <a class="brand" href="/" aria-label="GSVIEC home">
-        <img src="/assets/logo.svg" alt="GSVIEC" width="136" height="36">
+        <img src="/assets/logo-gsviec.png" alt="" width="44" height="44">
+        <span><strong>GSVIEC</strong><small>Enterprise Computing</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" data-nav>
-        <a href="/#services">Services</a>
-        <a href="/#platform">Bare Metal</a>
-        <a href="/#blockchain">Blockchain</a>
+        <a href="/#problem">Problem</a>
+        <a href="/#plans">Plans</a>
+        <a href="/#architecture">Architecture</a>
+        <a href="/#comparison">Compare</a>
         <a href="/insights/">Insights</a>
-        <a class="nav-cta" href="/#consultation">Book consultation</a>
+        <a class="nav-cta" href="/#consultation">Book a node audit</a>
       </nav>
     </header>
     <main id="main">
@@ -45,8 +47,11 @@
     </main>
     <footer class="site-footer">
       <div>
-        <img src="/assets/logo.svg" alt="GSVIEC" width="128" height="34">
-        <p>Enterprise infrastructure, DevOps, bare metal automation, cloud, and blockchain operations.</p>
+        <div class="footer-brand">
+          <img src="/assets/logo-gsviec.png" alt="" width="46" height="46">
+          <strong>GSVIEC</strong>
+        </div>
+        <p>Global Solutions for Virtualized Infrastructure & Enterprise Computing. Bare-metal automation and Web3 node infrastructure for teams that need control, performance, and uptime.</p>
       </div>
       <div>
         <strong>Contact</strong>
@@ -55,8 +60,8 @@
       </div>
       <div>
         <strong>Navigate</strong>
-        <a href="/services/devops-consulting/">DevOps Consulting</a>
-        <a href="/services/bare-metal-automation/">Bare Metal Automation</a>
+        <a href="/services/bare-metal-node-hosting/">Bare-metal Node Hosting</a>
+        <a href="/services/validator-infrastructure/">Validator Infrastructure</a>
         <a href="/insights/">Insights</a>
       </div>
     </footer>

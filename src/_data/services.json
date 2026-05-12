@@ -1,30 +1,30 @@
 [
   {
-    "title": "DevOps Consulting",
-    "slug": "devops-consulting",
-    "summary": "CI/CD, Kubernetes operations, release governance, and platform engineering for enterprise teams.",
-    "outcome": "Ship faster with controlled change, repeatable pipelines, and clearer operational ownership.",
-    "capabilities": ["CI/CD architecture", "Kubernetes management", "Observability", "IaC standards"]
+    "title": "Bare-metal Node Hosting",
+    "slug": "bare-metal-node-hosting",
+    "summary": "Automated node deployment on dedicated infrastructure for teams that need lower latency, stronger control, and predictable performance.",
+    "outcome": "Move critical Web3 nodes away from generic cloud dependency while keeping deployment and monitoring simple.",
+    "capabilities": ["PXE provisioning", "Terraform/Ansible automation", "Node monitoring", "Performance tuning"]
   },
   {
-    "title": "Bare Metal Automation",
-    "slug": "bare-metal-automation",
-    "summary": "Automated provisioning, firmware lifecycle, PXE boot, MaaS, and hardware monitoring.",
-    "outcome": "Reduce virtualization overhead and bring physical infrastructure under software control.",
-    "capabilities": ["PXE provisioning", "BIOS API workflows", "MaaS integration", "VLAN optimization"]
+    "title": "Validator Infrastructure",
+    "slug": "validator-infrastructure",
+    "summary": "SLA-led validator operations, failover architecture, backup, monitoring, and operational guardrails for PoS networks.",
+    "outcome": "Reduce downtime risk and build an operating model around validator reliability, not just server rental.",
+    "capabilities": ["HA topology", "Failover design", "Uptime reporting", "Slashing risk controls"]
   },
   {
-    "title": "Cloud & Hybrid Cloud",
-    "slug": "cloud-hybrid-cloud",
-    "summary": "AWS, GCP, Azure migration and private cloud platforms with OpenStack or Kubernetes.",
-    "outcome": "Balance flexibility, cost, data control, and resilience across public and private infrastructure.",
-    "capabilities": ["Cloud migration", "OpenStack", "Network architecture", "Cost optimization"]
+    "title": "Private Cloud for Web3",
+    "slug": "private-cloud-web3",
+    "summary": "Private cloud and hybrid infrastructure for DePIN, blockchain, AI, IoT, and data-sensitive enterprise teams.",
+    "outcome": "Keep data, compute, and operational policy under your control while preserving cloud-like automation.",
+    "capabilities": ["OpenStack", "Kubernetes", "Network isolation", "Capacity planning"]
   },
   {
-    "title": "Blockchain Infrastructure",
-    "slug": "blockchain-infrastructure",
-    "summary": "Validator nodes, private chains, smart contract security, and enterprise Web3 operations.",
-    "outcome": "Run secure, auditable, and resilient blockchain infrastructure for production use cases.",
-    "capabilities": ["Validator operations", "Hyperledger Fabric", "Quorum", "Smart contract review"]
+    "title": "DevOps Automation",
+    "slug": "devops-automation",
+    "summary": "Engineer-to-engineer DevOps support for CI/CD, Infrastructure as Code, observability, and secure operations.",
+    "outcome": "Make infrastructure changes repeatable, auditable, and easier to scale across node fleets.",
+    "capabilities": ["CI/CD", "GitOps", "IaC standards", "Observability"]
   }
 ]

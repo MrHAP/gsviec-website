@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
   {% for post in collections.posts %}
   <url>
     <loc>{{ site.domain }}{{ post.url }}</loc>
-    <lastmod>{{ post.data.updated or post.data.date | isoDate }}</lastmod>
+    <lastmod>{{ (post.data.updated or post.data.date) | isoDate }}</lastmod>
   </url>
   {% endfor %}
 </urlset>

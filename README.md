@@ -1,6 +1,6 @@
 # GSVIEC Website
 
-Enterprise technology website for GSVIEC: DevOps, Bare Metal Automation, Cloud/Hybrid Cloud, and Blockchain Infrastructure.
+Enterprise technology website for GSVIEC: Bare-metal Automation, Web3 Node Infrastructure, Validator Operations, DePIN infrastructure, and Private Cloud for enterprise computing.
 
 ## Local setup
 
@@ -23,14 +23,15 @@ The generated site is written to `_site/`.
 
 Before publishing:
 
-1. Replace `src/assets/logo.svg` with the official GSVIEC logo if available.
+1. Replace or optimize `src/assets/logo-gsviec.png` and `src/assets/favicon-gsviec.png` if a higher-quality final logo package is available.
 2. Replace `src/_data/site.json` values:
    - `phone`
    - `email`
    - `address`
    - `formEndpoint`
-3. Confirm whether public metrics such as `99.99%`, `50+`, `10k+`, and `24/7` can be used.
+3. Confirm whether cost, throughput, and SLA claims can be published as verified benchmarks. Until then, the website uses careful wording such as target, indicative, and designed for.
 4. Update `.pages.yml` if the content workflow needs more fields.
+5. Confirm final package prices for Starter, Pro, and Enterprise before paid acquisition campaigns.
 
 ## GitHub repository
 
@@ -89,6 +90,7 @@ The site includes:
 - Open Graph and Twitter Card tags
 - JSON-LD for Organization, WebSite, Service, FAQPage, CollectionPage, and Article
 - article structure with summary, FAQ, author, publish date, and update date
+- GEO-friendly answer blocks on service pages
 
 After launch, connect:
 

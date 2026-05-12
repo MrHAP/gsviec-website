@@ -60,6 +60,18 @@ if (form) {
     if (!email.value.includes("@") || message.value.trim().length < 12) {
       event.preventDefault();
       form.classList.add("has-error");
+      return;
+    }
+
+    if (form.action.includes("your-form-id")) {
+      event.preventDefault();
+      const name = form.elements.name.value.trim();
+      const company = form.elements.company.value.trim();
+      const subject = encodeURIComponent("GSVIEC infrastructure audit request");
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email.value.trim()}\nProject / Company: ${company}\n\nNeed:\n${message.value.trim()}`
+      );
+      window.location.href = `mailto:contact@gsviec.com?subject=${subject}&body=${body}`;
     }
   });
 }
