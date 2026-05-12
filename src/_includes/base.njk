@@ -28,18 +28,22 @@
     <header class="site-header" data-header>
       <a class="brand" href="{{ '/' | relativeUrl(page.url) }}" aria-label="GSVIEC home">
         <img src="{{ '/assets/logo-gsviec.png' | relativeUrl(page.url) }}" alt="" width="44" height="44">
-        <span><strong>GSVIEC</strong><small>Enterprise Computing</small></span>
+        <span><strong>GSVIEC</strong><small data-i18n="brand.subtitle">Enterprise Computing</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" data-nav>
-        <a href="{{ '/#problem' | relativeUrl(page.url) }}">Problem</a>
-        <a href="{{ '/#plans' | relativeUrl(page.url) }}">Plans</a>
-        <a href="{{ '/#architecture' | relativeUrl(page.url) }}">Architecture</a>
-        <a href="{{ '/#comparison' | relativeUrl(page.url) }}">Compare</a>
-        <a href="{{ '/insights/' | relativeUrl(page.url) }}">Insights</a>
-        <a class="nav-cta" href="{{ '/#consultation' | relativeUrl(page.url) }}">Book a node audit</a>
+        <a href="{{ '/#problem' | relativeUrl(page.url) }}" data-i18n="nav.problem">Problem</a>
+        <a href="{{ '/#plans' | relativeUrl(page.url) }}" data-i18n="nav.plans">Plans</a>
+        <a href="{{ '/#architecture' | relativeUrl(page.url) }}" data-i18n="nav.architecture">Architecture</a>
+        <a href="{{ '/#comparison' | relativeUrl(page.url) }}" data-i18n="nav.compare">Compare</a>
+        <a href="{{ '/insights/' | relativeUrl(page.url) }}" data-i18n="nav.insights">Insights</a>
+        <div class="language-toggle" aria-label="Language switcher">
+          <button type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang-toggle="vi" aria-pressed="false">VI</button>
+        </div>
+        <a class="nav-cta" href="{{ '/#consultation' | relativeUrl(page.url) }}" data-i18n="nav.cta">Book a node audit</a>
       </nav>
     </header>
     <main id="main">
@@ -51,20 +55,29 @@
           <img src="{{ '/assets/logo-gsviec.png' | relativeUrl(page.url) }}" alt="" width="46" height="46">
           <strong>GSVIEC</strong>
         </div>
-        <p>Global Solutions for Virtualized Infrastructure & Enterprise Computing. Bare-metal automation and Web3 node infrastructure for teams that need control, performance, and uptime.</p>
+        <p data-i18n="footer.description">Global Solutions for Virtualized Infrastructure & Enterprise Computing. Bare-metal automation and Web3 node infrastructure for teams that need control, performance, and uptime.</p>
       </div>
       <div>
-        <strong>Contact</strong>
+        <strong data-i18n="footer.contact">Contact</strong>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         <span>{{ site.address }}</span>
       </div>
       <div>
-        <strong>Navigate</strong>
-        <a href="{{ '/services/bare-metal-node-hosting/' | relativeUrl(page.url) }}">Bare-metal Node Hosting</a>
-        <a href="{{ '/services/validator-infrastructure/' | relativeUrl(page.url) }}">Validator Infrastructure</a>
-        <a href="{{ '/insights/' | relativeUrl(page.url) }}">Insights</a>
+        <strong data-i18n="footer.navigate">Navigate</strong>
+        <a href="{{ '/services/bare-metal-node-hosting/' | relativeUrl(page.url) }}" data-i18n="service.bare-metal-node-hosting.title">Bare-metal Node Hosting</a>
+        <a href="{{ '/services/validator-infrastructure/' | relativeUrl(page.url) }}" data-i18n="service.validator-infrastructure.title">Validator Infrastructure</a>
+        <a href="{{ '/insights/' | relativeUrl(page.url) }}" data-i18n="nav.insights">Insights</a>
       </div>
     </footer>
+    <div id="deploy-console" aria-live="polite" aria-label="Deploy mode console">
+      <button type="button" class="deploy-close" data-deploy-close aria-label="Close deploy console">×</button>
+      <div class="deploy-console-inner">
+        <p class="deploy-title">GSVIEC DEPLOY MODE</p>
+        <div data-deploy-log></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="{{ '/assets/js/main.js' | relativeUrl(page.url) }}" defer></script>
   </body>
 </html>

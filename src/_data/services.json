@@ -1,30 +1,46 @@
 [
   {
     "title": "Bare-metal Node Hosting",
+    "viTitle": "Lưu trữ Node Bare-metal",
     "slug": "bare-metal-node-hosting",
+    "icon": "server-cog",
     "summary": "Automated node deployment on dedicated infrastructure for teams that need lower latency, stronger control, and predictable performance.",
+    "viSummary": "Triển khai node tự động trên hạ tầng chuyên dụng cho đội ngũ cần độ trễ thấp, quyền kiểm soát cao và hiệu năng ổn định.",
     "outcome": "Move critical Web3 nodes away from generic cloud dependency while keeping deployment and monitoring simple.",
+    "viOutcome": "Giảm phụ thuộc vào cloud phổ thông cho các node Web3 quan trọng nhưng vẫn giữ quy trình triển khai và giám sát đơn giản.",
     "capabilities": ["PXE provisioning", "Terraform/Ansible automation", "Node monitoring", "Performance tuning"]
   },
   {
     "title": "Validator Infrastructure",
+    "viTitle": "Hạ tầng Validator",
     "slug": "validator-infrastructure",
+    "icon": "shield-check",
     "summary": "SLA-led validator operations, failover architecture, backup, monitoring, and operational guardrails for PoS networks.",
+    "viSummary": "Vận hành validator theo SLA với kiến trúc failover, backup, giám sát và rào chắn vận hành cho mạng PoS.",
     "outcome": "Reduce downtime risk and build an operating model around validator reliability, not just server rental.",
+    "viOutcome": "Giảm rủi ro downtime và xây mô hình vận hành xoay quanh độ tin cậy của validator, không chỉ thuê server.",
     "capabilities": ["HA topology", "Failover design", "Uptime reporting", "Slashing risk controls"]
   },
   {
     "title": "Private Cloud for Web3",
+    "viTitle": "Private Cloud cho Web3",
     "slug": "private-cloud-web3",
+    "icon": "cloud-lock",
     "summary": "Private cloud and hybrid infrastructure for DePIN, blockchain, AI, IoT, and data-sensitive enterprise teams.",
+    "viSummary": "Private cloud và hạ tầng hybrid cho DePIN, blockchain, AI, IoT và các đội ngũ doanh nghiệp cần kiểm soát dữ liệu.",
     "outcome": "Keep data, compute, and operational policy under your control while preserving cloud-like automation.",
+    "viOutcome": "Giữ dữ liệu, compute và chính sách vận hành trong tầm kiểm soát nhưng vẫn có tự động hóa như cloud.",
     "capabilities": ["OpenStack", "Kubernetes", "Network isolation", "Capacity planning"]
   },
   {
     "title": "DevOps Automation",
+    "viTitle": "Tự động hóa DevOps",
     "slug": "devops-automation",
+    "icon": "cpu",
     "summary": "Engineer-to-engineer DevOps support for CI/CD, Infrastructure as Code, observability, and secure operations.",
+    "viSummary": "Hỗ trợ DevOps engineer-to-engineer cho CI/CD, Infrastructure as Code, observability và vận hành an toàn.",
     "outcome": "Make infrastructure changes repeatable, auditable, and easier to scale across node fleets.",
+    "viOutcome": "Biến thay đổi hạ tầng thành quy trình lặp lại được, audit được và dễ mở rộng trên nhiều node.",
     "capabilities": ["CI/CD", "GitOps", "IaC standards", "Observability"]
   }
 ]

@@ -109,7 +109,7 @@ img { max-width: 100%; height: auto; }
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: .95rem;
   color: var(--muted);
   font-size: .95rem;
 }
@@ -120,6 +120,30 @@ img { max-width: 100%; height: auto; }
   padding: .75rem 1rem;
   border-radius: var(--radius);
   font-weight: 700;
+}
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .18rem;
+  background: rgba(255,255,255,.04);
+}
+.language-toggle button {
+  min-width: 34px;
+  border: 0;
+  border-radius: 999px;
+  padding: .45rem .55rem;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.language-toggle button[aria-pressed="true"] {
+  background: var(--brand);
+  color: #031018;
 }
 .nav-toggle {
   display: none;
@@ -172,9 +196,9 @@ img { max-width: 100%; height: auto; }
 .hero h1,
 .page-hero h1 {
   margin: 0;
-  max-width: 850px;
-  font-size: clamp(3rem, 7vw, 6.8rem);
-  line-height: .92;
+  max-width: 760px;
+  font-size: clamp(2.45rem, 5.1vw, 5rem);
+  line-height: 1.02;
   letter-spacing: 0;
   font-family: Montserrat, "IBM Plex Sans", sans-serif;
   text-transform: uppercase;
@@ -211,6 +235,13 @@ img { max-width: 100%; height: auto; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   font-weight: 800;
+  gap: .55rem;
+  cursor: pointer;
+}
+.button svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  stroke-width: 2.4;
 }
 .button.primary {
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
@@ -218,9 +249,14 @@ img { max-width: 100%; height: auto; }
   border-color: var(--brand);
 }
 .button.secondary { color: var(--text); }
+.deploy-button {
+  background: rgba(0, 255, 194, .08);
+  color: var(--brand-2);
+}
 .button:hover,
 .service-card:hover,
-.post-card:hover {
+.post-card:hover,
+.pricing-card:hover {
   transform: translateY(-3px);
 }
 .trust-strip {
@@ -374,8 +410,8 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
 .section h2,
 .consultation h2 {
   margin: .3rem 0 0;
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 1;
+  font-size: clamp(1.8rem, 3.1vw, 3.1rem);
+  line-height: 1.08;
   font-family: Montserrat, "IBM Plex Sans", sans-serif;
   text-transform: uppercase;
 }
@@ -401,6 +437,16 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
   background: rgba(13, 27, 45, .78);
   transition: transform .22s ease, border-color .22s ease, background .22s ease;
   overflow: hidden;
+}
+.service-card > svg,
+.pillar-grid div > svg,
+.pricing-card > svg,
+.blockchain-card > svg {
+  width: 1.45rem;
+  height: 1.45rem;
+  color: var(--brand);
+  margin-bottom: .8rem;
+  stroke-width: 1.8;
 }
 .service-card::before,
 .post-card::before,
@@ -495,7 +541,11 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
   font-weight: 800;
 }
 
-.block-card {
+.blockchain-flow {
+  display: grid;
+  gap: .85rem;
+}
+.blockchain-card {
   --tilt-x: 0deg;
   --tilt-y: 0deg;
   --glow-x: 50%;
@@ -503,24 +553,40 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
   position: relative;
   border: 1px solid rgba(0, 209, 255, .35);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 1.25rem;
   background:
     radial-gradient(circle at var(--glow-x) var(--glow-y), rgba(0, 255, 194, .14), transparent 38%),
     rgba(16, 36, 58, .92);
   box-shadow: var(--shadow);
-  transform: perspective(1000px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
-  transition: transform .18s ease;
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
-.block-card span,
-.block-card code,
-.block-card small {
+.blockchain-card:hover {
+  border-color: var(--brand-2);
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(0, 255, 194, .2);
+}
+.blockchain-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 14px rgba(0, 255, 194, .38);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.blockchain-card:hover::after { opacity: 1; }
+.blockchain-card span,
+.blockchain-card code,
+.blockchain-card small {
   display: block;
   color: var(--muted);
   margin-top: .8rem;
 }
-.block-card strong {
+.blockchain-card strong {
   display: block;
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-size: clamp(1.8rem, 4.2vw, 3.15rem);
   color: var(--brand);
 }
 
@@ -652,14 +718,68 @@ textarea:focus {
   display: grid;
   align-content: end;
 }
-.page-hero.compact h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); }
+.page-hero.compact h1 { font-size: clamp(2.15rem, 4.5vw, 4rem); }
 .article {
   max-width: 980px;
   margin: 0 auto;
 }
 .article-hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
+  font-size: clamp(2.1rem, 4.4vw, 4rem);
+  line-height: 1.06;
+}
+
+#deploy-console {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background:
+    radial-gradient(circle at 78% 22%, rgba(0, 209, 255, .16), transparent 24rem),
+    #020705;
+  color: #00ffc2;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+#deploy-console.is-open {
+  display: block;
+}
+.deploy-console-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 255, 194, .28);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, .64);
+  box-shadow: 0 0 32px rgba(0, 255, 194, .16);
+  min-height: 64vh;
+  padding: clamp(1rem, 3vw, 2rem);
+  overflow: hidden;
+}
+.deploy-title {
+  color: var(--brand);
+  border-bottom: 1px solid rgba(0, 255, 194, .22);
+  padding-bottom: .85rem;
+  margin-top: 0;
+}
+[data-deploy-log] p {
+  margin: .55rem 0;
+  animation: console-line .24s ease both;
+}
+.deploy-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(0, 255, 194, .32);
+  border-radius: 999px;
+  background: rgba(0,0,0,.5);
+  color: var(--brand-2);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+@keyframes console-line {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 .article-meta {
   display: flex;
@@ -742,7 +862,7 @@ textarea:focus {
   .hero { padding-top: 3rem; }
   .hero h1,
   .page-hero h1 {
-    font-size: clamp(2.5rem, 16vw, 4.2rem);
+    font-size: clamp(2.05rem, 11vw, 3.45rem);
   }
   .metrics,
   .service-grid,
@@ -774,7 +894,7 @@ textarea:focus {
     transition-duration: .001ms !important;
   }
   .terminal-card,
-  .block-card {
+  .blockchain-card {
     transform: none !important;
   }
 }

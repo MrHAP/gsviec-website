@@ -80,6 +80,8 @@ This repo includes `.pages.yml` for Pages CMS. After the repo is on GitHub:
 4. Create or edit posts in the `Insights` collection.
 5. Publishing a post commits Markdown to `src/posts/`, then GitHub Actions rebuilds the site.
 
+Detailed writing workflow: see `docs/insights-publishing-guide.md`.
+
 ## SEO/GEO
 
 The site includes:

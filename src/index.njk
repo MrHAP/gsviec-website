@@ -6,18 +6,19 @@ schema: '{"@context":"https://schema.org","@graph":[{"@type":"Organization","nam
 ---
 <section class="hero">
   <div class="hero-copy">
-    <p class="eyebrow">{{ site.brandBackronym }}</p>
-    <h1>Bare-metal automation for Web3 nodes that cannot afford downtime.</h1>
-    <p class="hero-lede">GSVIEC helps validators, DePIN projects, and enterprise blockchain teams deploy node infrastructure with dedicated hardware control, repeatable automation, monitoring, and SLA-led operations.</p>
+    <p class="eyebrow" data-i18n="hero.eyebrow">{{ site.brandBackronym }}</p>
+    <h1 data-i18n="hero.title">Bare-metal automation for Web3 nodes that cannot afford downtime.</h1>
+    <p class="hero-lede" data-i18n="hero.lede">GSVIEC helps validators, DePIN projects, and enterprise blockchain teams deploy node infrastructure with dedicated hardware control, repeatable automation, monitoring, and SLA-led operations.</p>
     <div class="hero-actions">
-      <a class="button primary" href="#consultation">Book a node audit</a>
-      <a class="button secondary" href="#plans">View plans</a>
+      <a class="button primary" href="#consultation" data-i18n="hero.primary">Book a node audit</a>
+      <a class="button secondary" href="#plans" data-i18n="hero.secondary">View plans</a>
+      <button class="button deploy-button" type="button" data-deploy-trigger><i data-lucide="terminal-square"></i><span data-i18n="hero.deploy">Deploy Mode</span></button>
     </div>
     <div class="trust-strip" aria-label="GSVIEC positioning">
-      <span>Engineer-to-Engineer</span>
-      <span>IaC-first</span>
-      <span>No free infra abuse</span>
-      <span>Designed for sovereignty</span>
+      <span data-i18n="trust.engineer">Engineer-to-Engineer</span>
+      <span data-i18n="trust.iac">IaC-first</span>
+      <span data-i18n="trust.abuse">No free infra abuse</span>
+      <span data-i18n="trust.sovereignty">Designed for sovereignty</span>
     </div>
   </div>
   <div class="terminal-card" aria-label="GSVIEC node deployment demo" data-tilt>
@@ -40,7 +41,7 @@ Failover route ........ standby
 Node status: HEALTHY</code></pre>
     <div class="terminal-status">
       <span class="pulse"></span>
-      Automation pipeline ready for paid onboarding
+      <span data-i18n="terminal.status">Automation pipeline ready for paid onboarding</span>
     </div>
     <div class="signal-stack" aria-hidden="true">
       <span></span>
@@ -52,39 +53,40 @@ Node status: HEALTHY</code></pre>
 </section>
 
 <section class="metrics" aria-label="Strategic metrics">
-  <div><strong>50-85%</strong><span>Target infra cost reduction vs generic cloud, subject to workload</span></div>
-  <div><strong>30-50%</strong><span>Benchmark target for throughput uplift in suitable bare-metal cases</span></div>
-  <div><strong>99.9%</strong><span>Pro SLA target after paid deployment</span></div>
-  <div><strong>99.99%</strong><span>Enterprise SLA target with redundancy design</span></div>
+  <div><strong>50-85%</strong><span data-i18n="metric.cost">Target infra cost reduction vs generic cloud, subject to workload</span></div>
+  <div><strong>30-50%</strong><span data-i18n="metric.throughput">Benchmark target for throughput uplift in suitable bare-metal cases</span></div>
+  <div><strong>99.9%</strong><span data-i18n="metric.pro">Pro SLA target after paid deployment</span></div>
+  <div><strong>99.99%</strong><span data-i18n="metric.enterprise">Enterprise SLA target with redundancy design</span></div>
 </section>
 
 <section id="problem" class="section problem-section">
   <div class="section-heading">
-    <p class="eyebrow">Market Problem</p>
-    <h2>Web3 infrastructure is too expensive, too abstracted, and too risky when uptime drives revenue.</h2>
-    <p>Validators and node operators do not only buy servers. They buy continuity, block participation, latency, and confidence that operations will not fail at the worst moment.</p>
+    <p class="eyebrow" data-i18n="problem.eyebrow">Market Problem</p>
+    <h2 data-i18n="problem.title">Web3 infrastructure is too expensive, too abstracted, and too risky when uptime drives revenue.</h2>
+    <p data-i18n="problem.copy">Validators and node operators do not only buy servers. They buy continuity, block participation, latency, and confidence that operations will not fail at the worst moment.</p>
   </div>
   <div class="pillar-grid">
-    <div><strong>Cloud cost pressure</strong><p>Generic cloud is convenient, but high-volume node workloads can become structurally expensive as request, storage, and bandwidth usage grows.</p></div>
-    <div><strong>Slashing exposure</strong><p>Validator downtime can create protocol penalties. GSVIEC positions infrastructure around uptime visibility, failover thinking, and clear SLA boundaries.</p></div>
-    <div><strong>Limited control</strong><p>RPC and managed cloud services are fast to start, but teams lose hardware control, tuning depth, and direct ownership of critical operations.</p></div>
-    <div><strong>Manual DevOps burden</strong><p>Dedicated servers are cheaper but difficult to operate without automation, monitoring, security policy, and engineer-level support.</p></div>
+    <div><i data-lucide="wallet-cards"></i><strong data-i18n="problem.card1.title">Cloud cost pressure</strong><p data-i18n="problem.card1.copy">Generic cloud is convenient, but high-volume node workloads can become structurally expensive as request, storage, and bandwidth usage grows.</p></div>
+    <div><i data-lucide="shield-alert"></i><strong data-i18n="problem.card2.title">Slashing exposure</strong><p data-i18n="problem.card2.copy">Validator downtime can create protocol penalties. GSVIEC positions infrastructure around uptime visibility, failover thinking, and clear SLA boundaries.</p></div>
+    <div><i data-lucide="lock-keyhole"></i><strong data-i18n="problem.card3.title">Limited control</strong><p data-i18n="problem.card3.copy">RPC and managed cloud services are fast to start, but teams lose hardware control, tuning depth, and direct ownership of critical operations.</p></div>
+    <div><i data-lucide="workflow"></i><strong data-i18n="problem.card4.title">Manual DevOps burden</strong><p data-i18n="problem.card4.copy">Dedicated servers are cheaper but difficult to operate without automation, monitoring, security policy, and engineer-level support.</p></div>
   </div>
 </section>
 
 <section id="services" class="section">
   <div class="section-heading">
-    <p class="eyebrow">Core Infrastructure</p>
-    <h2>A focused stack for node operators, DePIN teams, and enterprise blockchain builders.</h2>
-    <p>The public offer is narrow by design: bare-metal automation, validator operations, private Web3 cloud, and DevOps automation.</p>
+    <p class="eyebrow" data-i18n="services.eyebrow">Core Infrastructure</p>
+    <h2 data-i18n="services.title">A focused stack for node operators, DePIN teams, and enterprise blockchain builders.</h2>
+    <p data-i18n="services.copy">The public offer is narrow by design: bare-metal automation, validator operations, private Web3 cloud, and DevOps automation.</p>
   </div>
   <div class="service-grid">
     {% for item in services %}
     <a class="service-card" href="{{ ('/services/' + item.slug + '/') | relativeUrl(page.url) }}">
+      <i data-lucide="{{ item.icon }}"></i>
       <span>0{{ loop.index }}</span>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.summary }}</p>
-      <small>{{ item.outcome }}</small>
+      <h3 data-i18n="service.{{ item.slug }}.title">{{ item.title }}</h3>
+      <p data-i18n="service.{{ item.slug }}.summary">{{ item.summary }}</p>
+      <small data-i18n="service.{{ item.slug }}.outcome">{{ item.outcome }}</small>
     </a>
     {% endfor %}
   </div>
@@ -92,55 +94,55 @@ Node status: HEALTHY</code></pre>
 
 <section id="plans" class="section plans-section">
   <div class="section-heading">
-    <p class="eyebrow">Commercial Model</p>
-    <h2>Three offers that turn technical interest into paid infrastructure.</h2>
-    <p>Pricing below is indicative and should be confirmed after node requirements, chain, region, redundancy, bandwidth, and support level are scoped.</p>
+    <p class="eyebrow" data-i18n="plans.eyebrow">Commercial Model</p>
+    <h2 data-i18n="plans.title">Three offers that turn technical interest into paid infrastructure.</h2>
+    <p data-i18n="plans.copy">Pricing below is indicative and should be confirmed after node requirements, chain, region, redundancy, bandwidth, and support level are scoped.</p>
   </div>
   <div class="pricing-grid">
     <article class="pricing-card">
       <span>Starter</span>
-      <h3>Open-source automation</h3>
+      <h3 data-i18n="plans.starter.title">Open-source automation</h3>
       <strong>Free</strong>
-      <p>Scripts and documentation for technical teams that want to run a node on their own server.</p>
+      <p data-i18n="plans.starter.copy">Scripts and documentation for technical teams that want to run a node on their own server.</p>
       <ul>
         <li>Ansible/Terraform starter repo</li>
         <li>Local or customer-owned server</li>
         <li>Community-driven lead capture</li>
       </ul>
-      <a class="button secondary" href="#consultation">Request repo access</a>
+      <a class="button secondary" href="#consultation" data-i18n="plans.starter.cta">Request repo access</a>
     </article>
     <article class="pricing-card featured">
       <span>Pro</span>
-      <h3>Managed single node</h3>
+      <h3 data-i18n="plans.pro.title">Managed single node</h3>
       <strong>$100-200/node/mo</strong>
-      <p>Paid node deployment with monitoring, basic support, and a target SLA for early operators.</p>
+      <p data-i18n="plans.pro.copy">Paid node deployment with monitoring, basic support, and a target SLA for early operators.</p>
       <ul>
         <li>Automated bare-metal deployment</li>
         <li>Monitoring and uptime reports</li>
         <li>14-day refund policy after upfront payment</li>
       </ul>
-      <a class="button primary" href="#consultation">Start Pro scope</a>
+      <a class="button primary" href="#consultation" data-i18n="plans.pro.cta">Start Pro scope</a>
     </article>
     <article class="pricing-card">
       <span>Enterprise</span>
-      <h3>Multi-node failover</h3>
+      <h3 data-i18n="plans.enterprise.title">Multi-node failover</h3>
       <strong>$500+/mo</strong>
-      <p>Custom topology for validators, DePIN projects, and enterprise blockchain systems.</p>
+      <p data-i18n="plans.enterprise.copy">Custom topology for validators, DePIN projects, and enterprise blockchain systems.</p>
       <ul>
         <li>Multi-node redundancy</li>
         <li>Auto-failover beta path</li>
         <li>24/7 technical support and SLA 99.99% target</li>
       </ul>
-      <a class="button secondary" href="#consultation">Book enterprise demo</a>
+      <a class="button secondary" href="#consultation" data-i18n="plans.enterprise.cta">Book enterprise demo</a>
     </article>
   </div>
 </section>
 
 <section id="architecture" class="section split-section">
   <div>
-    <p class="eyebrow">Infrastructure Architecture</p>
-    <h2>From physical servers to repeatable Web3 operations.</h2>
-    <p>GSVIEC's strategic advantage is the bridge between bare-metal control and software-defined operations. The system should make a dedicated server behave like a disciplined infrastructure product.</p>
+    <p class="eyebrow" data-i18n="architecture.eyebrow">Infrastructure Architecture</p>
+    <h2 data-i18n="architecture.title">From physical servers to repeatable Web3 operations.</h2>
+    <p data-i18n="architecture.copy">GSVIEC's strategic advantage is the bridge between bare-metal control and software-defined operations. The system should make a dedicated server behave like a disciplined infrastructure product.</p>
     <ul class="check-list">
       <li>PXE boot and automated OS provisioning for fast node setup</li>
       <li>BIOS, firmware, VLAN, and bonding policy for performance control</li>
@@ -163,16 +165,29 @@ Node status: HEALTHY</code></pre>
 
 <section class="section blockchain-section">
   <div class="blockchain-copy">
-    <p class="eyebrow">Proof of Technical Direction</p>
-    <h2>Open-source scripts create trust; managed operations create revenue.</h2>
-    <p>The Starter repo attracts technical operators. Pro and Enterprise convert teams that need SLA, support, failover, and someone accountable for production readiness.</p>
+    <p class="eyebrow" data-i18n="blockchain.eyebrow">Proof of Technical Direction</p>
+    <h2 data-i18n="blockchain.title">Open-source scripts create trust; managed operations create revenue.</h2>
+    <p data-i18n="blockchain.copy">The Starter repo attracts technical operators. Pro and Enterprise convert teams that need SLA, support, failover, and someone accountable for production readiness.</p>
   </div>
-  <div class="block-card" aria-label="Validator node status" data-tilt>
-    <span>Validator Node</span>
-    <strong>Healthy</strong>
-    <code>slot_lag: 0</code>
-    <code>latency: monitored</code>
-    <small>Uptime, alerting, and failover reports available after deployment</small>
+  <div class="blockchain-flow" aria-label="Validator node status">
+    <div class="blockchain-card">
+      <i data-lucide="box"></i>
+      <span>Block #192834</span>
+      <strong class="status-validated">Validated</strong>
+      <code>hash: 0x8a72...3f9</code>
+    </div>
+    <div class="blockchain-card">
+      <i data-lucide="activity"></i>
+      <span>Validator Node</span>
+      <strong class="status-validated">Healthy</strong>
+      <code>slot_lag: 0</code>
+    </div>
+    <div class="blockchain-card">
+      <i data-lucide="radio-tower"></i>
+      <span>Failover Route</span>
+      <strong class="status-validated">Standby</strong>
+      <code>latency: monitored</code>
+    </div>
   </div>
 </section>
 
@@ -208,7 +223,7 @@ Node status: HEALTHY</code></pre>
 <section class="section insights-preview">
   <div class="section-heading">
     <p class="eyebrow">Latest Insights</p>
-    <h2>Engineer-to-engineer content for validators and infrastructure teams.</h2>
+    <h2 data-i18n="insights.title">Engineer-to-engineer content for validators and infrastructure teams.</h2>
   </div>
   <div class="post-grid">
     {% for post in collections.posts %}
@@ -226,16 +241,16 @@ Node status: HEALTHY</code></pre>
 
 <section id="consultation" class="consultation">
   <div>
-    <p class="eyebrow">Book a Node Audit</p>
-    <h2>Find out whether your node workload should move to bare metal.</h2>
-    <p>Send your chain, region, uptime target, current monthly cost, and whether you need single-node Pro or Enterprise failover. GSVIEC will respond with the next technical step.</p>
+    <p class="eyebrow" data-i18n="contact.eyebrow">Book a Node Audit</p>
+    <h2 data-i18n="contact.title">Find out whether your node workload should move to bare metal.</h2>
+    <p data-i18n="contact.copy">Send your chain, region, uptime target, current monthly cost, and whether you need single-node Pro or Enterprise failover. GSVIEC will respond with the next technical step.</p>
   </div>
   <form class="contact-form" action="{{ site.formEndpoint }}" method="POST" data-contact-form>
-    <label>Full name<input name="name" autocomplete="name" required></label>
-    <label>Work email<input type="email" name="email" autocomplete="email" required></label>
-    <label>Project / company<input name="company" autocomplete="organization"></label>
-    <label>Node or infrastructure need<textarea name="message" rows="5" placeholder="Network, current provider, monthly cost, uptime target, region, and expected node count" required></textarea></label>
-    <button class="button primary" type="submit">Request infrastructure audit</button>
-    <p class="form-note">Replace the Formspree endpoint in <code>src/_data/site.json</code> before production.</p>
+    <label><span data-i18n="form.name">Full name</span><input name="name" autocomplete="name" required></label>
+    <label><span data-i18n="form.email">Work email</span><input type="email" name="email" autocomplete="email" required></label>
+    <label><span data-i18n="form.company">Project / company</span><input name="company" autocomplete="organization"></label>
+    <label><span data-i18n="form.message">Node or infrastructure need</span><textarea name="message" rows="5" placeholder="Network, current provider, monthly cost, uptime target, region, and expected node count" data-i18n-placeholder="form.placeholder" required></textarea></label>
+    <button class="button primary" type="submit" data-i18n="form.submit">Request infrastructure audit</button>
+    <p class="form-note" data-i18n="form.note">If Formspree is not configured yet, the form opens your email app and sends to hello@gsviec.com.</p>
   </form>
 </section>
