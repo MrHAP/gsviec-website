@@ -1,0 +1,30 @@
+[
+  {
+    "title": "DevOps Consulting",
+    "slug": "devops-consulting",
+    "summary": "CI/CD, Kubernetes operations, release governance, and platform engineering for enterprise teams.",
+    "outcome": "Ship faster with controlled change, repeatable pipelines, and clearer operational ownership.",
+    "capabilities": ["CI/CD architecture", "Kubernetes management", "Observability", "IaC standards"]
+  },
+  {
+    "title": "Bare Metal Automation",
+    "slug": "bare-metal-automation",
+    "summary": "Automated provisioning, firmware lifecycle, PXE boot, MaaS, and hardware monitoring.",
+    "outcome": "Reduce virtualization overhead and bring physical infrastructure under software control.",
+    "capabilities": ["PXE provisioning", "BIOS API workflows", "MaaS integration", "VLAN optimization"]
+  },
+  {
+    "title": "Cloud & Hybrid Cloud",
+    "slug": "cloud-hybrid-cloud",
+    "summary": "AWS, GCP, Azure migration and private cloud platforms with OpenStack or Kubernetes.",
+    "outcome": "Balance flexibility, cost, data control, and resilience across public and private infrastructure.",
+    "capabilities": ["Cloud migration", "OpenStack", "Network architecture", "Cost optimization"]
+  },
+  {
+    "title": "Blockchain Infrastructure",
+    "slug": "blockchain-infrastructure",
+    "summary": "Validator nodes, private chains, smart contract security, and enterprise Web3 operations.",
+    "outcome": "Run secure, auditable, and resilient blockchain infrastructure for production use cases.",
+    "capabilities": ["Validator operations", "Hyperledger Fabric", "Quorum", "Smart contract review"]
+  }
+]

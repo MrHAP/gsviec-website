@@ -1,0 +1,153 @@
+---
+layout: base.njk
+title: "GSVIEC - DevOps, Bare Metal, Cloud & Blockchain Infrastructure"
+description: "GSVIEC builds private cloud platforms, optimizes hardware, and deploys high-security blockchain infrastructure for enterprise teams."
+schema: '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"GSVIEC","url":"https://gsviec.com","logo":"https://gsviec.com/assets/logo.svg","address":{"@type":"PostalAddress","addressLocality":"Thu Duc City","addressRegion":"Ho Chi Minh City","addressCountry":"VN"}},{"@type":"WebSite","name":"GSVIEC","url":"https://gsviec.com"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does GSVIEC specialize in?","acceptedAnswer":{"@type":"Answer","text":"GSVIEC specializes in DevOps consulting, bare metal automation, cloud and hybrid cloud platforms, and enterprise blockchain infrastructure."}},{"@type":"Question","name":"Can GSVIEC support private infrastructure?","acceptedAnswer":{"@type":"Answer","text":"Yes. GSVIEC designs and operates private cloud, bare metal, Kubernetes, OpenStack, and blockchain infrastructure for enterprise requirements."}}]}]}'
+---
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Comprehensive Infrastructure Solutions</p>
+    <h1>DevOps, Bare Metal, Cloud and Blockchain infrastructure for enterprise teams.</h1>
+    <p class="hero-lede">GSVIEC builds private cloud platforms, optimizes hardware, and deploys high-security blockchain infrastructure where performance, reliability, and operational control matter.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#consultation">Book consultation</a>
+      <a class="button secondary" href="#services">Explore services</a>
+    </div>
+    <div class="trust-strip" aria-label="GSVIEC capabilities">
+      <span>Kubernetes</span>
+      <span>OpenStack</span>
+      <span>Terraform</span>
+      <span>Hyperledger</span>
+    </div>
+  </div>
+  <div class="terminal-card" aria-label="Terraform bare metal provisioning demo">
+    <div class="terminal-bar">
+      <span></span><span></span><span></span>
+      <strong>infra/gsviec-prod</strong>
+    </div>
+    <pre><code data-typewriter>terraform plan -var env=enterprise
+resource "baremetal_node" "worker" {
+  hostname        = "prod-worker-01"
+  os_image        = "ubuntu_22_04"
+  pxe_boot        = true
+  bios_profile    = "performance"
+  vlan_profile    = "secure-prod"
+  user_data       = file("cloud-init.yaml")
+}
+Plan: 24 to add, 0 to change, 0 to destroy.</code></pre>
+    <div class="terminal-status">
+      <span class="pulse"></span>
+      Provisioning pipeline ready
+    </div>
+  </div>
+</section>
+
+<section class="metrics" aria-label="Operational metrics">
+  <div><strong data-count="99.99">99.99%</strong><span>Designed uptime</span></div>
+  <div><strong data-count="50">50+</strong><span>Enterprise clients</span></div>
+  <div><strong data-count="10000">10k+</strong><span>Nodes managed</span></div>
+  <div><strong>24/7</strong><span>Expert support</span></div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Core Services</p>
+    <h2>Infrastructure work that moves from strategy to production.</h2>
+    <p>GSVIEC helps enterprise teams design, automate, secure, and operate the foundation behind critical digital products.</p>
+  </div>
+  <div class="service-grid">
+    {% for item in services %}
+    <a class="service-card" href="/services/{{ item.slug }}/">
+      <span>0{{ loop.index }}</span>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.summary }}</p>
+      <small>{{ item.outcome }}</small>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="platform" class="section split-section">
+  <div>
+    <p class="eyebrow">Bare Metal Power</p>
+    <h2>Bring physical infrastructure under software control.</h2>
+    <p>Automated PXE boot, firmware lifecycle, MaaS integration, network optimization, and real-time monitoring turn hardware fleets into programmable infrastructure.</p>
+    <ul class="check-list">
+      <li>Automated OS provisioning and cloud-init workflows</li>
+      <li>Firmware and BIOS management through repeatable policy</li>
+      <li>VLAN, bonding, and hardware-level performance tuning</li>
+      <li>Terraform-led Infrastructure as Code standards</li>
+    </ul>
+  </div>
+  <div class="architecture-panel">
+    <div>GitOps</div>
+    <div>Terraform</div>
+    <div>PXE Boot</div>
+    <div>MaaS</div>
+    <div>Monitoring</div>
+    <div>Private Cloud</div>
+  </div>
+</section>
+
+<section id="blockchain" class="section blockchain-section">
+  <div class="blockchain-copy">
+    <p class="eyebrow">Enterprise Blockchain</p>
+    <h2>Validator and private chain infrastructure designed for real operations.</h2>
+    <p>From validator node deployment to permissioned chain architecture and smart contract security, GSVIEC focuses on resilient infrastructure, data integrity, and measurable operational control.</p>
+  </div>
+  <div class="block-card" aria-label="Blockchain block status">
+    <span>Block #192834</span>
+    <strong>Validated</strong>
+    <code>Hash: 0x8a72...3f9</code>
+    <code>Prev: 0x1c44...9a2</code>
+    <small>Txns: 1,402 / Size: 42 kB</small>
+  </div>
+</section>
+
+<section class="section why-section">
+  <div class="section-heading">
+    <p class="eyebrow">Why GSVIEC</p>
+    <h2>Built for teams that need the infrastructure to hold.</h2>
+  </div>
+  <div class="pillar-grid">
+    <div><strong>Performance</strong><p>Bare metal optimization and hardware-aware architecture reduce unnecessary overhead.</p></div>
+    <div><strong>Reliability</strong><p>Monitoring, operational runbooks, and 24/7 support keep systems observable and accountable.</p></div>
+    <div><strong>Security</strong><p>Private cloud and blockchain infrastructure are designed around control, isolation, and auditability.</p></div>
+    <div><strong>Automation</strong><p>Infrastructure as Code, CI/CD, and repeatable provisioning turn operations into a dependable system.</p></div>
+  </div>
+</section>
+
+<section class="section insights-preview">
+  <div class="section-heading">
+    <p class="eyebrow">Latest Insights</p>
+    <h2>Technical thinking for enterprise infrastructure leaders.</h2>
+  </div>
+  <div class="post-grid">
+    {% for post in collections.posts %}
+    {% if loop.index <= 3 %}
+    <a class="post-card" href="{{ post.url }}">
+      <span>{{ post.data.category }}</span>
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.data.summary }}</p>
+      <small>{{ post.data.date | readableDate }}</small>
+    </a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="consultation" class="consultation">
+  <div>
+    <p class="eyebrow">Book consultation</p>
+    <h2>Discuss your infrastructure roadmap with GSVIEC.</h2>
+    <p>Share your cloud, DevOps, bare metal, or blockchain challenge. The first response should clarify scope, priorities, and the next technical decision.</p>
+  </div>
+  <form class="contact-form" action="{{ site.formEndpoint }}" method="POST" data-contact-form>
+    <label>Full name<input name="name" autocomplete="name" required></label>
+    <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+    <label>Company<input name="company" autocomplete="organization"></label>
+    <label>What do you need?<textarea name="message" rows="5" required></textarea></label>
+    <button class="button primary" type="submit">Request consultation</button>
+    <p class="form-note">Replace the Formspree endpoint in <code>src/_data/site.json</code> before production.</p>
+  </form>
+</section>

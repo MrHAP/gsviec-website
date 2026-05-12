@@ -1,0 +1,32 @@
+---
+layout: base.njk
+ogType: article
+---
+<article class="article">
+  <div class="article-hero">
+    <a class="eyebrow" href="/insights/">Insights / {{ category }}</a>
+    <h1>{{ title }}</h1>
+    <p>{{ summary }}</p>
+    <div class="article-meta">
+      <span>{{ date | readableDate }}</span>
+      <span>Updated {{ updated or date | readableDate }}</span>
+      <span>{{ author }}</span>
+    </div>
+  </div>
+  <div class="article-body">
+    {{ content | safe }}
+  </div>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ title }}",
+    "description": "{{ description }}",
+    "author": { "@type": "Organization", "name": "{{ author }}" },
+    "publisher": { "@type": "Organization", "name": "GSVIEC", "logo": { "@type": "ImageObject", "url": "{{ site.domain }}/assets/logo.svg" } },
+    "datePublished": "{{ date | isoDate }}",
+    "dateModified": "{{ updated or date | isoDate }}",
+    "mainEntityOfPage": "{{ site.domain }}{{ page.url }}"
+  }
+  </script>
+</article>

@@ -1,0 +1,11 @@
+{
+  "name": "GSVIEC",
+  "domain": "https://gsviec.com",
+  "defaultTitle": "GSVIEC - Comprehensive Infrastructure Solutions",
+  "defaultDescription": "GSVIEC builds private cloud platforms, optimizes hardware, and deploys high-security Blockchain infrastructure for enterprise teams.",
+  "phone": "+84 000 000 000",
+  "email": "contact@gsviec.com",
+  "address": "Thu Duc City, Ho Chi Minh City, Vietnam",
+  "formEndpoint": "https://formspree.io/f/your-form-id",
+  "socialImage": "/assets/og-gsviec.svg"
+}

@@ -1,0 +1,18 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.domain }}/</loc></url>
+  <url><loc>{{ site.domain }}/insights/</loc></url>
+  {% for item in services %}
+  <url><loc>{{ site.domain }}/services/{{ item.slug }}/</loc></url>
+  {% endfor %}
+  {% for post in collections.posts %}
+  <url>
+    <loc>{{ site.domain }}{{ post.url }}</loc>
+    <lastmod>{{ post.data.updated or post.data.date | isoDate }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>

@@ -1,0 +1,25 @@
+---
+layout: base.njk
+permalink: /insights/
+title: "GSVIEC Insights - DevOps, Bare Metal, Cloud and Blockchain"
+description: "Technical insights from GSVIEC on DevOps, bare metal automation, cloud architecture, and blockchain infrastructure."
+schema: '{"@context":"https://schema.org","@type":"CollectionPage","name":"GSVIEC Insights","url":"https://gsviec.com/insights/"}'
+---
+<section class="page-hero compact">
+  <p class="eyebrow">Insights</p>
+  <h1>Infrastructure notes for technical decision makers.</h1>
+  <p>Practical perspectives on DevOps, bare metal automation, cloud platforms, and blockchain operations.</p>
+</section>
+
+<section class="section">
+  <div class="post-grid">
+    {% for post in collections.posts %}
+    <a class="post-card" href="{{ post.url }}">
+      <span>{{ post.data.category }}</span>
+      <h2>{{ post.data.title }}</h2>
+      <p>{{ post.data.summary }}</p>
+      <small>{{ post.data.date | readableDate }} / {{ post.data.author }}</small>
+    </a>
+    {% endfor %}
+  </div>
+</section>

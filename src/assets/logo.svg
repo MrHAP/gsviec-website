@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="48" viewBox="0 0 180 48" role="img" aria-labelledby="title">
+  <title id="title">GSVIEC</title>
+  <rect width="180" height="48" rx="8" fill="#07111f"/>
+  <path d="M20 15h20v5H26v8h11v-3h-7v-5h13v13H20z" fill="#31d0aa"/>
+  <path d="M52 15h23v5H58v4h14v5H58v4h17v5H52zM82 15h6l8 16 8-16h6L99 38h-6zM117 15h6v23h-6zM132 15h23v5h-17v4h14v5h-14v4h17v5h-23z" fill="#f7fbff"/>
+  <path d="M163 15h5v23h-5z" fill="#31d0aa"/>
+</svg>

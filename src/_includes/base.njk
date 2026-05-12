@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="{{ lang or 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title or site.defaultTitle }}</title>
+    <meta name="description" content="{{ description or site.defaultDescription }}">
+    <link rel="canonical" href="{{ site.domain }}{{ page.url }}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:title" content="{{ title or site.defaultTitle }}">
+    <meta property="og:description" content="{{ description or site.defaultDescription }}">
+    <meta property="og:url" content="{{ site.domain }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.domain }}{{ socialImage or site.socialImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title or site.defaultTitle }}">
+    <meta name="twitter:description" content="{{ description or site.defaultDescription }}">
+    <meta name="theme-color" content="#07111f">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% if schema %}
+    <script type="application/ld+json">{{ schema | safe }}</script>
+    {% endif %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="GSVIEC home">
+        <img src="/assets/logo.svg" alt="GSVIEC" width="136" height="36">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="/#services">Services</a>
+        <a href="/#platform">Bare Metal</a>
+        <a href="/#blockchain">Blockchain</a>
+        <a href="/insights/">Insights</a>
+        <a class="nav-cta" href="/#consultation">Book consultation</a>
+      </nav>
+    </header>
+    <main id="main">
+      {{ content | safe }}
+    </main>
+    <footer class="site-footer">
+      <div>
+        <img src="/assets/logo.svg" alt="GSVIEC" width="128" height="34">
+        <p>Enterprise infrastructure, DevOps, bare metal automation, cloud, and blockchain operations.</p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <span>{{ site.address }}</span>
+      </div>
+      <div>
+        <strong>Navigate</strong>
+        <a href="/services/devops-consulting/">DevOps Consulting</a>
+        <a href="/services/bare-metal-automation/">Bare Metal Automation</a>
+        <a href="/insights/">Insights</a>
+      </div>
+    </footer>
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

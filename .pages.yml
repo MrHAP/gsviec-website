@@ -1,0 +1,61 @@
+media:
+  input: src/assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: posts
+    label: Insights
+    path: src/posts
+    type: collection
+    filename: "{fields.slug}.md"
+    view:
+      fields: [title, date, category, published]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+      - name: description
+        label: SEO Description
+        type: text
+        required: true
+      - name: summary
+        label: GEO Summary
+        type: text
+        required: true
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: updated
+        label: Updated Date
+        type: date
+      - name: author
+        label: Author
+        type: string
+        default: GSVIEC Infrastructure Team
+      - name: category
+        label: Category
+        type: select
+        options:
+          values: [DevOps, Bare Metal, Cloud, Blockchain, Security]
+        required: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: featured
+        label: Featured Image
+        type: image
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: body
+        label: Body
+        type: rich-text
+        required: true
