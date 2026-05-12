@@ -14,7 +14,7 @@ schema: '{"@context":"https://schema.org","@type":"CollectionPage","name":"GSVIE
 <section class="section">
   <div class="post-grid">
     {% for post in collections.posts %}
-    <a class="post-card" href="{{ post.url }}">
+    <a class="post-card" href="{{ post.url | relativeUrl(page.url) }}">
       <span>{{ post.data.category }}</span>
       <h2>{{ post.data.title }}</h2>
       <p>{{ post.data.summary }}</p>

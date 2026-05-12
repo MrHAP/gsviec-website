@@ -1,5 +1,8 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
+const header = document.querySelector("[data-header]");
+
+document.body.classList.add("reveal-ready");
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
@@ -8,6 +11,13 @@ if (navToggle && nav) {
     nav.classList.toggle("is-open", !open);
   });
 }
+
+const syncHeader = () => {
+  if (!header) return;
+  header.classList.toggle("is-scrolled", window.scrollY > 12);
+};
+syncHeader();
+window.addEventListener("scroll", syncHeader, { passive: true });
 
 const typewriter = document.querySelector("[data-typewriter]");
 if (typewriter) {
@@ -51,6 +61,47 @@ const counterObserver = new IntersectionObserver((entries) => {
 });
 
 counters.forEach((counter) => counterObserver.observe(counter));
+
+const revealTargets = document.querySelectorAll(
+  ".section, .metrics > div, .service-card, .pricing-card, .post-card, .pillar-grid > div, .detail-grid > div, .comparison-table [role='row'], .consultation, .article-body > *"
+);
+
+revealTargets.forEach((target, index) => {
+  target.setAttribute("data-reveal", "");
+  target.style.setProperty("--reveal-delay", `${Math.min((index % 6) * 70, 350)}ms`);
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+);
+
+revealTargets.forEach((target) => revealObserver.observe(target));
+
+document.querySelectorAll("[data-tilt]").forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    card.style.setProperty("--tilt-x", `${x * 8}deg`);
+    card.style.setProperty("--tilt-y", `${y * -8}deg`);
+    card.style.setProperty("--glow-x", `${(x + 0.5) * 100}%`);
+    card.style.setProperty("--glow-y", `${(y + 0.5) * 100}%`);
+  });
+
+  card.addEventListener("pointerleave", () => {
+    card.style.setProperty("--tilt-x", "0deg");
+    card.style.setProperty("--tilt-y", "0deg");
+    card.style.setProperty("--glow-x", "50%");
+    card.style.setProperty("--glow-y", "50%");
+  });
+});
 
 const form = document.querySelector("[data-contact-form]");
 if (form) {

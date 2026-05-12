@@ -16,9 +16,9 @@
     <meta name="twitter:title" content="{{ title or site.defaultTitle }}">
     <meta name="twitter:description" content="{{ description or site.defaultDescription }}">
     <meta name="theme-color" content="#0B192C">
-    <link rel="icon" href="/assets/favicon-gsviec.png" type="image/png">
-    <link rel="manifest" href="/assets/site.webmanifest">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="{{ '/assets/favicon-gsviec.png' | relativeUrl(page.url) }}" type="image/png">
+    <link rel="manifest" href="{{ '/assets/site.webmanifest' | relativeUrl(page.url) }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relativeUrl(page.url) }}">
     {% if schema %}
     <script type="application/ld+json">{{ schema | safe }}</script>
     {% endif %}
@@ -26,20 +26,20 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
-      <a class="brand" href="/" aria-label="GSVIEC home">
-        <img src="/assets/logo-gsviec.png" alt="" width="44" height="44">
+      <a class="brand" href="{{ '/' | relativeUrl(page.url) }}" aria-label="GSVIEC home">
+        <img src="{{ '/assets/logo-gsviec.png' | relativeUrl(page.url) }}" alt="" width="44" height="44">
         <span><strong>GSVIEC</strong><small>Enterprise Computing</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" data-nav>
-        <a href="/#problem">Problem</a>
-        <a href="/#plans">Plans</a>
-        <a href="/#architecture">Architecture</a>
-        <a href="/#comparison">Compare</a>
-        <a href="/insights/">Insights</a>
-        <a class="nav-cta" href="/#consultation">Book a node audit</a>
+        <a href="{{ '/#problem' | relativeUrl(page.url) }}">Problem</a>
+        <a href="{{ '/#plans' | relativeUrl(page.url) }}">Plans</a>
+        <a href="{{ '/#architecture' | relativeUrl(page.url) }}">Architecture</a>
+        <a href="{{ '/#comparison' | relativeUrl(page.url) }}">Compare</a>
+        <a href="{{ '/insights/' | relativeUrl(page.url) }}">Insights</a>
+        <a class="nav-cta" href="{{ '/#consultation' | relativeUrl(page.url) }}">Book a node audit</a>
       </nav>
     </header>
     <main id="main">
@@ -48,7 +48,7 @@
     <footer class="site-footer">
       <div>
         <div class="footer-brand">
-          <img src="/assets/logo-gsviec.png" alt="" width="46" height="46">
+          <img src="{{ '/assets/logo-gsviec.png' | relativeUrl(page.url) }}" alt="" width="46" height="46">
           <strong>GSVIEC</strong>
         </div>
         <p>Global Solutions for Virtualized Infrastructure & Enterprise Computing. Bare-metal automation and Web3 node infrastructure for teams that need control, performance, and uptime.</p>
@@ -60,11 +60,11 @@
       </div>
       <div>
         <strong>Navigate</strong>
-        <a href="/services/bare-metal-node-hosting/">Bare-metal Node Hosting</a>
-        <a href="/services/validator-infrastructure/">Validator Infrastructure</a>
-        <a href="/insights/">Insights</a>
+        <a href="{{ '/services/bare-metal-node-hosting/' | relativeUrl(page.url) }}">Bare-metal Node Hosting</a>
+        <a href="{{ '/services/validator-infrastructure/' | relativeUrl(page.url) }}">Validator Infrastructure</a>
+        <a href="{{ '/insights/' | relativeUrl(page.url) }}">Insights</a>
       </div>
     </footer>
-    <script src="/assets/js/main.js" defer></script>
+    <script src="{{ '/assets/js/main.js' | relativeUrl(page.url) }}" defer></script>
   </body>
 </html>

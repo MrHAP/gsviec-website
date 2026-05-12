@@ -1,3 +1,5 @@
+import path from "node:path";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
@@ -13,6 +15,32 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("isoDate", (value) => {
     return new Date(value).toISOString();
+  });
+
+  eleventyConfig.addFilter("relativeUrl", (target, currentUrl = "/") => {
+    if (!target || !target.startsWith("/") || target.startsWith("//")) return target;
+
+    const markerIndex = target.search(/[?#]/);
+    const baseTarget = markerIndex >= 0 ? target.slice(0, markerIndex) : target;
+    const suffix = markerIndex >= 0 ? target.slice(markerIndex) : "";
+    const currentDir = currentUrl.endsWith("/")
+      ? currentUrl.slice(0, -1) || "/"
+      : path.posix.dirname(currentUrl);
+    const cleanTarget =
+      baseTarget !== "/" && baseTarget.endsWith("/")
+        ? baseTarget.slice(0, -1)
+        : baseTarget;
+    let relative = path.posix.relative(currentDir, cleanTarget) || ".";
+
+    if (baseTarget.endsWith("/") && relative !== ".") {
+      relative += "/";
+    }
+
+    if (baseTarget === "/" && relative === ".") {
+      relative = "./";
+    }
+
+    return `${relative}${suffix}`;
   });
 
   eleventyConfig.addCollection("posts", (collectionApi) => {

@@ -20,7 +20,7 @@ schema: '{"@context":"https://schema.org","@graph":[{"@type":"Organization","nam
       <span>Designed for sovereignty</span>
     </div>
   </div>
-  <div class="terminal-card" aria-label="GSVIEC node deployment demo">
+  <div class="terminal-card" aria-label="GSVIEC node deployment demo" data-tilt>
     <div class="terminal-bar">
       <span></span><span></span><span></span>
       <strong>gsviec/node-automator</strong>
@@ -41,6 +41,12 @@ Node status: HEALTHY</code></pre>
     <div class="terminal-status">
       <span class="pulse"></span>
       Automation pipeline ready for paid onboarding
+    </div>
+    <div class="signal-stack" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 </section>
@@ -74,7 +80,7 @@ Node status: HEALTHY</code></pre>
   </div>
   <div class="service-grid">
     {% for item in services %}
-    <a class="service-card" href="/services/{{ item.slug }}/">
+    <a class="service-card" href="{{ ('/services/' + item.slug + '/') | relativeUrl(page.url) }}">
       <span>0{{ loop.index }}</span>
       <h3>{{ item.title }}</h3>
       <p>{{ item.summary }}</p>
@@ -161,7 +167,7 @@ Node status: HEALTHY</code></pre>
     <h2>Open-source scripts create trust; managed operations create revenue.</h2>
     <p>The Starter repo attracts technical operators. Pro and Enterprise convert teams that need SLA, support, failover, and someone accountable for production readiness.</p>
   </div>
-  <div class="block-card" aria-label="Validator node status">
+  <div class="block-card" aria-label="Validator node status" data-tilt>
     <span>Validator Node</span>
     <strong>Healthy</strong>
     <code>slot_lag: 0</code>
@@ -207,7 +213,7 @@ Node status: HEALTHY</code></pre>
   <div class="post-grid">
     {% for post in collections.posts %}
     {% if loop.index <= 3 %}
-    <a class="post-card" href="{{ post.url }}">
+    <a class="post-card" href="{{ post.url | relativeUrl(page.url) }}">
       <span>{{ post.data.category }}</span>
       <h3>{{ post.data.title }}</h3>
       <p>{{ post.data.summary }}</p>

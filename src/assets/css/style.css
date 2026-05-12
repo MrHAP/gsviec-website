@@ -16,6 +16,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
+  position: relative;
+  min-height: 100vh;
   margin: 0;
   font-family: "IBM Plex Sans", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
@@ -24,6 +26,29 @@ body {
     linear-gradient(180deg, #0B192C 0%, #081625 48%, #0B192C 100%);
   color: var(--text);
   letter-spacing: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 209, 255, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 209, 255, .055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.72), transparent 78%);
+  animation: grid-drift 24s linear infinite;
+}
+main,
+.site-header,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 96px 48px, 96px 48px; }
 }
 
 a { color: inherit; text-decoration: none; }
@@ -52,6 +77,11 @@ img { max-width: 100%; height: auto; }
   background: rgba(7, 17, 31, 0.78);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
+  transition: background .24s ease, box-shadow .24s ease;
+}
+.site-header.is-scrolled {
+  background: rgba(7, 17, 31, 0.93);
+  box-shadow: 0 14px 48px rgba(0, 0, 0, .28);
 }
 
 .brand {
@@ -108,12 +138,36 @@ img { max-width: 100%; height: auto; }
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   min-height: calc(100vh - 80px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, .84fr);
   align-items: center;
   gap: clamp(2rem, 5vw, 5rem);
   padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 5vw, 5rem);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 8% -12% auto 40%;
+  height: 72%;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(135deg, rgba(0, 209, 255, .14) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(45deg, rgba(0, 255, 194, .08) 0 1px, transparent 1px 42px);
+  transform: skewY(-8deg);
+  opacity: .42;
+  animation: circuit-slide 18s linear infinite;
+}
+@keyframes circuit-slide {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 180px 0, -160px 0; }
+}
+.hero-copy,
+.terminal-card {
+  position: relative;
+  z-index: 1;
 }
 .hero h1,
 .page-hero h1 {
@@ -183,11 +237,40 @@ img { max-width: 100%; height: auto; }
 }
 
 .terminal-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  position: relative;
   border: 1px solid rgba(0, 209, 255, .36);
-  background: linear-gradient(180deg, rgba(16, 36, 58, .96), rgba(8, 18, 31, .96));
+  background:
+    radial-gradient(circle at var(--glow-x) var(--glow-y), rgba(0, 209, 255, .16), transparent 34%),
+    linear-gradient(180deg, rgba(16, 36, 58, .96), rgba(8, 18, 31, .96));
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
+  transform: perspective(1200px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
+  transition: transform .18s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.terminal-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(0, 255, 194, .13), transparent);
+  height: 28%;
+  transform: translateY(-120%);
+  animation: scanline 4.8s ease-in-out infinite;
+}
+.terminal-card > * {
+  position: relative;
+  z-index: 2;
+}
+@keyframes scanline {
+  0%, 22% { transform: translateY(-120%); opacity: 0; }
+  38% { opacity: 1; }
+  72%, 100% { transform: translateY(390%); opacity: 0; }
 }
 .terminal-bar {
   display: flex;
@@ -223,6 +306,28 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
   padding: 1rem;
   color: var(--muted);
   border-top: 1px solid var(--line);
+}
+.signal-stack {
+  display: grid;
+  gap: .45rem;
+  padding: 0 1rem 1rem;
+}
+.signal-stack span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--brand), var(--brand-2), transparent);
+  transform-origin: left;
+  animation: signal-flow 2.4s ease-in-out infinite;
+}
+.signal-stack span:nth-child(2) { animation-delay: .18s; opacity: .72; }
+.signal-stack span:nth-child(3) { animation-delay: .36s; opacity: .54; }
+.signal-stack span:nth-child(4) { animation-delay: .54s; opacity: .36; }
+@keyframes signal-flow {
+  0% { transform: scaleX(.06); opacity: .18; }
+  45% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(.18); opacity: .24; }
 }
 .pulse {
   width: 10px;
@@ -288,12 +393,34 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
 .pillar-grid div,
 .detail-grid div,
 .pricing-card {
+  position: relative;
   min-height: 260px;
   padding: 1.25rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(13, 27, 45, .78);
   transition: transform .22s ease, border-color .22s ease, background .22s ease;
+  overflow: hidden;
+}
+.service-card::before,
+.post-card::before,
+.pricing-card::before,
+.pillar-grid div::before,
+.detail-grid div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 0%, rgba(0, 209, 255, .12) 42%, transparent 68%);
+  transform: translateX(-120%);
+  transition: transform .55s ease;
+}
+.service-card:hover::before,
+.post-card:hover::before,
+.pricing-card:hover::before,
+.pillar-grid div:hover::before,
+.detail-grid div:hover::before {
+  transform: translateX(120%);
 }
 .service-card:hover,
 .post-card:hover {
@@ -369,11 +496,20 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
 }
 
 .block-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  position: relative;
   border: 1px solid rgba(0, 209, 255, .35);
   border-radius: var(--radius);
   padding: 2rem;
-  background: rgba(16, 36, 58, .92);
+  background:
+    radial-gradient(circle at var(--glow-x) var(--glow-y), rgba(0, 255, 194, .14), transparent 38%),
+    rgba(16, 36, 58, .92);
   box-shadow: var(--shadow);
+  transform: perspective(1000px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
+  transition: transform .18s ease;
 }
 .block-card span,
 .block-card code,
@@ -448,6 +584,18 @@ code { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mo
   text-transform: uppercase;
   letter-spacing: .08em;
   font-size: .78rem;
+}
+
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity .7s ease var(--reveal-delay, 0ms),
+    transform .7s ease var(--reveal-delay, 0ms);
+}
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-faq {
@@ -614,4 +762,19 @@ textarea:focus {
   .metrics div { padding: 1.25rem; }
   pre { min-height: 300px; font-size: .78rem; }
   .architecture-panel { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+  .terminal-card,
+  .block-card {
+    transform: none !important;
+  }
 }
